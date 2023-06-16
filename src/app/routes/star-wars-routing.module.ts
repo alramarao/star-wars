@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { NotFoundComponent } from '../components/not-found/not-found.component';
+import { NotFoundComponent } from '../pages/not-found/not-found.component';
 export const StarWarsRoutes: Routes = [
   {
     path: '',
