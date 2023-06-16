@@ -6,9 +6,12 @@ import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { StarWarsEffects, StarWarsReducer } from './app/state';
+import { provideRouter } from '@angular/router';
+import { StarWarsRoutes } from './app/routes/star-wars-routing.module';
 
 bootstrapApplication(StarWarsComponent, {
   providers: [
+    provideRouter(StarWarsRoutes),
     provideHttpClient(withInterceptors([ApiInterceptor])),
     provideStore({ starWars: StarWarsReducer }),
     provideEffects(StarWarsEffects),
