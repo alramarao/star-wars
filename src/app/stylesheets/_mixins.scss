@@ -1,0 +1,80 @@
+// ******* Mixins ********* //
+
+// Flex Display
+@mixin display-flex(
+  $flex-direction,
+  $justify-content: center,
+  $align-items: center,
+  $flex-wrap: wrap
+) {
+  align-items: $align-items;
+  display: flex;
+  flex-direction: $flex-direction;
+  flex-wrap: $flex-wrap;
+  justify-content: $justify-content;
+}
+
+// Font styling
+@mixin font-set(
+  $color,
+  $font-name,
+  $size,
+  $weight: normal,
+  $line-height: normal
+) {
+  color: $color;
+  font-family: $font-name;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+// Mixin for responsiveness
+@mixin respond($media) {
+  @if $media == "xxs" {
+    @media only screen and (max-width: ($xxs - 1)) {
+      @content;
+    }
+  } @else if $media == "gt-xxs" {
+    @media only screen and (min-width: $xxs) {
+      @content;
+    }
+  }
+  @if $media == "xs" {
+    @media only screen and (max-width: ($xs - 1px)) {
+      @content;
+    }
+  } @else if $media == "gt-xs" {
+    @media only screen and (min-width: $xs) {
+      @content;
+    }
+  } @else if $media == "sm" {
+    @media only screen and (min-width: $xs) and (max-width: ($sm - 1px)) {
+      @content;
+    }
+  } @else if $media == "gt-sm" {
+    @media only screen and (min-width: $sm) {
+      @content;
+    }
+  } @else if $media == "md" {
+    @media only screen and (min-width: $sm) and (max-width: ($md - 1px)) {
+      @content;
+    }
+  } @else if $media == "gt-md" {
+    @media only screen and (min-width: $md) {
+      @content;
+    }
+  } @else if $media == "lg" {
+    @media only screen and (min-width: $md) and (max-width: ($lg - 1px)) {
+      @content;
+    }
+  } @else if $media == "gt-lg" {
+    @media only screen and (min-width: $lg) {
+      @content;
+    }
+  } @else if $media == "xl" {
+    @media only screen and (min-width: $lg) {
+      @content;
+    }
+  }
+}

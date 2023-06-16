@@ -1,0 +1,26 @@
+// ******* Variables ********* //
+
+// Sizes
+$xxs: 320px;
+$xs: 600px;
+$sm: 960px;
+$md: 1280px;
+$lg: 1440px;
+
+$primary-size-base: 8px;
+
+// Color Variables
+$theme-black: #000;
+$theme-white: #fff;
+$primary-color: #5dade2;
+$secondary-color: #1b4f72;
+
+$body-bg-color: #f0f0f0;
+
+$source-georgia: "Georgia", "serif";
+
+// Special calculations for the grid
+$primary-size-triple: 3 * $primary-size-base;
+
+// Shadow Properties
+$shadow: 0 2px 2 * $primary-size-base 0 rgba(0, 0, 0, 0.03);

@@ -1,0 +1,29 @@
+// ******* Typography ********* //
+
+// Headings
+%heading-1 {
+    @include font-set($theme-black, $source-georgia, 42px, 600);
+    text-transform: uppercase;
+  }
+  %heading-2 {
+    @include font-set(inherit, $source-georgia, 32px, 600);
+  }
+  %heading-3 {
+    @include font-set($theme-black, $source-georgia, 24px, 600);
+  }
+  
+  // Widget
+  %widget {
+    background-color: $theme-white;
+    box-shadow: $shadow;
+    padding: 3 * $primary-size-base;
+    position: relative;
+  }
+
+  // Transition
+  %transition {
+    -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+  }

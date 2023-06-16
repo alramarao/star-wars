@@ -1,0 +1,77 @@
+// ******* Grid Styles ********* //
+
+.grid {
+  margin: 0 auto;
+  max-width: 1200px;
+  z-index: 2;
+
+  @include respond(gt-xs) {
+    max-width: 1200px;
+  }
+}
+
+.grid-row {
+  @include display-flex(row, flex-start, flex-start, wrap);
+  @include respond(gt-sm) {
+    margin: 0 -1.5 * $primary-size-base 1.5 * $primary-size-base -1.5 *
+      $primary-size-base;
+  }
+
+  margin: $primary-size-base (-$primary-size-base) $primary-size-base (-$primary-size-base);
+}
+
+.grid-col {
+  flex-basis: 100%;
+  margin: 1.5 * $primary-size-base;
+  margin-top: $primary-size-triple;
+
+  @include respond(gt-sm) {
+    flex-basis: calc(50% - #{$primary-size-triple});
+    margin-top: $primary-size-triple;
+  }
+
+  @include respond(gt-md) {
+    flex-basis: calc(50% - #{$primary-size-triple});
+    margin: 1.5 * $primary-size-base;
+    margin-top: $primary-size-base;
+  }
+
+  @include respond(gt-lg) {
+    flex-basis: calc(50% - #{$primary-size-triple});
+    margin: 1.5 * $primary-size-base;
+    margin-top: $primary-size-base;
+  }
+
+  &--12 {
+    @include respond(gt-sm) {
+      flex-basis: calc(100% - #{$primary-size-triple});
+    }
+
+    @include respond(gt-md) {
+      flex-basis: calc(100% - #{$primary-size-triple});
+      margin: 1.5 * $primary-size-base;
+    }
+
+    @include respond(gt-lg) {
+      flex-basis: calc(100% - #{$primary-size-triple});
+      margin: 1.5 * $primary-size-base;
+    }
+  }
+
+  &--6 {
+    @include respond(gt-sm) {
+      flex-basis: calc(100% - #{$primary-size-triple});
+    }
+
+    @include respond(gt-md) {
+      flex-basis: calc(50% - #{$primary-size-triple});
+      margin: 1.5 * $primary-size-base;
+    }
+
+    @include respond(gt-lg) {
+      flex-basis: calc(50% - #{$primary-size-triple});
+      margin: 1.5 * $primary-size-base;
+      max-width: calc(50% - #{$primary-size-triple});
+    }
+  }
+}
