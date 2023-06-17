@@ -3,7 +3,6 @@
 // Headings
 %heading-1 {
     @include font-set($theme-black, $source-georgia, 42px, 600);
-    text-transform: uppercase;
   }
   %heading-2 {
     @include font-set(inherit, $source-georgia, 32px, 600);
