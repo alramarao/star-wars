@@ -1,1 +1,48 @@
-<p>characters works!</p>
+<div class="grid">
+    <div class="container-widget">
+      <div class="grid-row" *ngIf="!loading; else loadingCharacters">
+        <div
+          class="grid-col grid-col--12 star-war"
+          *ngIf="tableData; else emptyCharacters"
+        >
+          <div
+            *ngFor="let item of tableData"
+            class="star-war__character"
+            [routerLink]="['/character', item.uid]"
+          >
+            <div class="heading-2">
+              {{ item.name }}
+            </div>
+          </div>
+        </div>
+        <ng-template #emptyCharacters> No Characters available... </ng-template>
+      </div>
+  
+      <div class="grid-row">
+        <div class="grid-col grid-col--12">
+          <ng-template #loadingCharacters>
+            <app-loader></app-loader>
+          </ng-template>
+        </div>
+      </div>
+      
+      <div class="grid-row">
+        <div class="grid-col grid-col--12">
+          <mat-paginator
+            #paginator
+            class="demo-paginator"
+            (page)="handlePageEvent($event)"
+            [length]="totalItems"
+            [pageSize]="pageSize"
+            [disabled]="!totalItems || loading"
+            [showFirstLastButtons]="true"
+            [hidePageSize]="true"
+            [pageIndex]="pageIndex"
+            aria-label="Select page"
+          >
+          </mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+  
