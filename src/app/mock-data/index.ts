@@ -76,7 +76,7 @@ export const mockCharacterResponse = {
     },
     description: 'A person within the Star Wars univers',
     _id: '5f63a36eee9fd7000499be42',
-    uid: '2',
+    uid: '1',
     __v: 0,
   },
 };
