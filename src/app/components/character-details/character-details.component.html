@@ -1,1 +1,80 @@
-<p>character-details works!</p>
+<div class="grid details">
+    <div class="container-widget">
+      <ng-container *ngIf="characterDetails; else loadingCharacters">
+        <div class="grid-row">
+          <div class="grid-col grid-col--12">
+            <div class="heading-1 center">
+              {{ characterDetails.properties.name }}
+            </div>
+            <div class="description center">
+              {{ characterDetails.description }}
+            </div>
+          </div>
+        </div>
+  
+        <div class="grid-row">
+          <div class="grid-col grid-col--6">
+            <div class="details__section">
+              <div class="heading-3 center">Personal Info</div>
+              <div class="details__row">
+                <div>Birth Year</div>
+                <span>{{ characterDetails.properties.birth_year }}</span>
+              </div>
+              <div class="details__row">
+                <div>Gender</div>
+                <span>{{ characterDetails.properties.gender }}</span>
+              </div>
+              <div class="details__row">
+                <div>Height</div>
+                <span>{{ characterDetails.properties.height }}</span>
+              </div>
+              <div class="details__row">
+                <div>Planet Details</div>
+                <span
+                  ><div class="btn" (click)="handlePlanetDetails()">
+                    View Details
+                  </div></span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="grid-col grid-col--6">
+            <div class="details__section">
+              <div class="heading-3 center">Anatomy</div>
+              <div class="details__row">
+                <div>Mass</div>
+                <span>{{ characterDetails.properties.mass }}</span>
+              </div>
+              <div class="details__row">
+                <div>Hair Color</div>
+                <span>{{ characterDetails.properties.hair_color }}</span>
+              </div>
+              <div class="details__row">
+                <div>Skin Color</div>
+                <span>{{ characterDetails.properties.skin_color }}</span>
+              </div>
+              <div class="details__row">
+                <div>Eye Color</div>
+                <span>{{ characterDetails.properties.eye_color }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+  
+      <ng-template #loadingCharacters>
+        <div class="grid-row">
+          <div class="grid-col grid-col--12">
+            <app-loader></app-loader>
+          </div>
+        </div>
+      </ng-template>
+  
+      <div class="grid-row">
+        <div class="grid-col grid-col--12 actions">
+          <div class="btn primary" (click)="handleBack()">Back</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
