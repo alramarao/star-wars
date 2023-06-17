@@ -75,7 +75,6 @@ export class CharactersComponent implements OnDestroy {
   }
 
   handlePageEvent(e: PageEvent) {
-    console.log(e);
     this.pageIndex = e.pageIndex;
     this.getCharactersList();
   }

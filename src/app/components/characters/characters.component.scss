@@ -9,21 +9,21 @@
     @include display-flex(row, center, center, wrap);
     @extend %transition;
 
-    width: 400px;
-    height: 240px;
     background-color: $primary-color;
     color: $secondary-color;
-    font-size: 32px;
     cursor: pointer;
+    font-size: 32px;
+    height: 240px;
+    width: 400px;
 
     -webkit-box-shadow: 0 22px 30px -6px $secondary-color;
     -moz-box-shadow: 0 22px 30px -6px $secondary-color;
     box-shadow: 0 22px 30px -6px $secondary-color;
 
     &:hover {
-      -webkit-transform: scale(1.1, 1.1);
-      transform: scale(1.1, 1.1);
       color: $theme-white;
+      transform: scale(1.1, 1.1);
+      -webkit-transform: scale(1.1, 1.1);
     }
   }
 }

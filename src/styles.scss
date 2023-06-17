@@ -17,41 +17,41 @@ body {
 // Global styles
 .heading-1 {
   @extend %heading-1;
+
+  color: $primary-color;
 }
+
 .heading-2 {
   @extend %heading-2;
 }
+
 .heading-3 {
   @extend %heading-3;
 }
 
 .btn {
-  display: inline-block;
-  outline: 0;
-  cursor: pointer;
-  border: none;
-  padding: 0 56px;
-  height: 45px;
-  line-height: 45px;
+  @include font-set(
+    $primary-color,
+    $source-georgia,
+    2 * $primary-size-base,
+    normal,
+    5.6 * $primary-size-base
+  );
+
   border-radius: 7px;
-  font-weight: 400;
-  font-size: 16px;
-  background: $theme-white;
-  color: $primary-color;
   box-shadow: 0 4px 14px 0 rgb(0 0 0 / 10%);
-  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-  :hover {
-    background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 56px;
+
+  &:hover {
     box-shadow: 0 6px 20px rgb(93 93 93 / 23%);
+    opacity: 0.8;
   }
 
   &.primary {
     background: $primary-color;
     color: $theme-white;
-  }
-  &.secondary {
-    background: $theme-white;
-    color: $primary-color;
   }
 }
 
@@ -61,4 +61,54 @@ body {
 
 .container-widget {
   @extend %widget;
+}
+
+.actions {
+  @include display-flex(row, center, center, wrap);
+  gap: 24px;
+}
+
+.description {
+  color: $desc-color;
+  font-size: 22px;
+}
+
+.details {
+  &__section {
+    border: 8px double #db9d32;
+    padding: 18px;
+  }
+  &__row {
+    @include display-flex(row, center, center, wrap);
+
+    color: #df7401;
+    font-size: 20px;
+    margin: 3 * $primary-size-base 2 * $primary-size-base;
+
+    div {
+      color: $secondary-color;
+      font-weight: 400;
+    }
+
+    span {
+      text-transform: capitalize;
+    }
+
+    * {
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+
+    &__title {
+      @include font-set(
+        $theme-black,
+        $source-georgia,
+        3 * $primary-size-base,
+        normal,
+        5 * $primary-size-base
+      );
+
+      text-align: center;
+    }
+  }
 }
