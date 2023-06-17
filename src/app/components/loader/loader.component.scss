@@ -1,0 +1,6 @@
+@import "src/app/stylesheets/general";
+
+.loader {
+    @include display-flex(row, center, center, wrap);
+    min-height: 400px;
+}
