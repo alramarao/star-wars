@@ -1,1 +1,72 @@
-<p>planet-details works!</p>
+<div class="grid details">
+    <div class="container-widget">
+      <ng-container *ngIf="planetDetails; else loadingPlanetDetails">
+        <div class="grid-row">
+          <div class="grid-col grid-col--12">
+            <div class="heading-1 center">
+              {{ planetDetails.properties.name }}
+            </div>
+            <div class="description center">
+              {{ planetDetails.description }}
+            </div>
+          </div>
+        </div>
+  
+        <div class="grid-row">
+          <div class="grid-col grid-col--12">
+            <div class="details__section">
+              <div class="heading-3 center">Planet Details</div>
+              <div class="details__row">
+                <div>Diameter</div>
+                <span>{{ planetDetails.properties.diameter }}</span>
+              </div>
+              <div class="details__row">
+                <div>Rotation Period</div>
+                <span>{{ planetDetails.properties.rotation_period }}</span>
+              </div>
+              <div class="details__row">
+                <div>Orbital Period</div>
+                <span>{{ planetDetails.properties.orbital_period }}</span>
+              </div>
+              <div class="details__row">
+                <div>Gravity</div>
+                <span>{{ planetDetails.properties.gravity }}</span>
+              </div>
+              <div class="details__row">
+                <div>Population</div>
+                <span>{{ planetDetails.properties.population }}</span>
+              </div>
+              <div class="details__row">
+                <div>Climate</div>
+                <span>{{ planetDetails.properties.climate }}</span>
+              </div>
+              <div class="details__row">
+                <div>Terrain</div>
+                <span>{{ planetDetails.properties.terrain }}</span>
+              </div>
+              <div class="details__row">
+                <div>Surface Water</div>
+                <span>{{ planetDetails.properties.surface_water }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+  
+      <ng-template #loadingPlanetDetails>
+        <div class="grid-row">
+          <div class="grid-col grid-col--12">
+            <app-loader></app-loader>
+          </div>
+        </div>
+      </ng-template>
+  
+      <div class="grid-row">
+        <div class="grid-col grid-col--12 actions">
+          <div class="btn primary" (click)="handleBack()">Back</div>
+          <div class="btn primary" [routerLink]="['/characters']">Characters List</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
